@@ -55,7 +55,7 @@ function SideMenu() {
         </div>
         <div className="side-menu-content">
           {/* profile */}
-          <Link to="/profile" style={{ textDecoration: "none" }}>
+          <Link to="/chatyar/profile" style={{ textDecoration: "none" }}>
             <div className="side-menu-item">
               <span>
                 <MdPerson size={"25px"} />
