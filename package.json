@@ -16,7 +16,7 @@
     "typesense": "^1.4.3",
     "web-vitals": "^2.1.4"
   },
-  "homepage": "https://Pedram-Karimi.github.io/ChatYar",
+  "homepage": "https://Pedram-Karimi.github.io/chatyar",
   "scripts": {
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",

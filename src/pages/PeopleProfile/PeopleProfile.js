@@ -18,7 +18,7 @@ function PeopleProfile() {
   return (
     <div className="peaple-profile">
       <div className="peaple-profile-body">
-        <Link to="/" style={{ textDecoration: "none" }}>
+        <Link to="/chatyar/" style={{ textDecoration: "none" }}>
           <p className="account-go-back">Go back</p>
         </Link>
         <div

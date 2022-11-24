@@ -18,7 +18,7 @@ function App() {
         <BrowserRouter>
           <Routes>
             <Route
-              path="/"
+              path="/chatyar/"
               element={
                 <ProtectedRouts>
                   <Home />
@@ -26,24 +26,16 @@ function App() {
               }
             />
             <Route
-              path="/:id"
-              element={
-                <ProtectedRouts>
-                  <Home />
-                </ProtectedRouts>
-              }
-            />
-            <Route
-              path="/profile"
+              path="/chatyar/profile"
               element={
                 <ProtectedRouts>
                   <Account />
                 </ProtectedRouts>
               }
             />
-            <Route path="/profile/:id" element={<PeopleProfile />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/sign-up" element={<SignUp />} />
+            <Route path="/chatyar/profile/:id" element={<PeopleProfile />} />
+            <Route path="/chatyar/login" element={<Login />} />
+            <Route path="/chatyar/sign-up" element={<SignUp />} />
           </Routes>
         </BrowserRouter>
       </UserAuthProvider>

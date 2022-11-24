@@ -88,7 +88,7 @@ function Account() {
   return (
     <div className="account">
       <div className="account-body">
-        <Link to="/" style={{ textDecoration: "none" }}>
+        <Link to="/chatyar/" style={{ textDecoration: "none" }}>
           <p className="account-go-back">Go back</p>
         </Link>
         <div
