@@ -46,7 +46,7 @@ function ChatHeader(props) {
           changeSelected(null);
         }}
       />
-      <Link to={`/${props.id}`} className="link">
+      <Link to={`/profile/${props.id}`} className="link">
         <p className="chat-header-username">{props.userName}</p>
       </Link>
       <MdMoreVert className="header-menu-icon" onClick={toggleHeaderMenu} />

@@ -156,7 +156,10 @@ function ChatSide() {
       </div>
       {selected && <WriteText />}
       {/* {blockedUser.includes(selected?.id) && <UnBlockNav />} */}
-      <img src="../images/bg-image.jpg" className="bg-image" />
+      <img
+        src="https://images.unsplash.com/photo-1484589065579-248aad0d8b13?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=459&q=80"
+        className="bg-image"
+      />
     </div>
   );
 }

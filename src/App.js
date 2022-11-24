@@ -26,6 +26,14 @@ function App() {
               }
             />
             <Route
+              path="/:id"
+              element={
+                <ProtectedRouts>
+                  <Home />
+                </ProtectedRouts>
+              }
+            />
+            <Route
               path="/profile"
               element={
                 <ProtectedRouts>
@@ -33,7 +41,7 @@ function App() {
                 </ProtectedRouts>
               }
             />
-            <Route path="/:id" element={<PeopleProfile />} />
+            <Route path="/profile/:id" element={<PeopleProfile />} />
             <Route path="/login" element={<Login />} />
             <Route path="/sign-up" element={<SignUp />} />
           </Routes>

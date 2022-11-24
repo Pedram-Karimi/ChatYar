@@ -3,7 +3,6 @@
   width: 30%;
   height: 100vh;
   overflow: hidden;
-  position: relative;
   border-right: 1px solid #1f212c;
   background-color: #17181e;
 }

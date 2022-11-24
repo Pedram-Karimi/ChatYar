@@ -46,13 +46,13 @@
   margin-left: 3px;
 }
 .pageWrapper {
-  width: 100vw;
-  left: 0px;
+  width: 100vw !important;
+  left: 0vw;
   position: absolute;
   top: 0px;
   height: 100vh !important;
   z-index: 10;
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: rgba(0, 0, 0, 0.5);
 }
 /*side-menu-content*/
 .side-menu-content {

@@ -4,6 +4,7 @@
   padding: 10px;
   display: flex;
   justify-content: center;
+  height: 100vh;
 }
 .peaple-profile-body {
   max-width: 500px;
