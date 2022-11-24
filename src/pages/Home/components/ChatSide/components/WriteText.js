@@ -43,6 +43,7 @@ function WriteText() {
           {inputTextMess && (
             <MdSend
               color="#20b2c2"
+              onClick={submitTextMess}
               style={{
                 marginRight: "10px",
                 cursor: "pointer",
