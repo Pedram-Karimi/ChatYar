@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/ChatYar/static/css/main.a58bd79e.css",
+    "main.js": "/ChatYar/static/js/main.823d17bd.js",
+    "index.html": "/ChatYar/index.html",
+    "main.a58bd79e.css.map": "/ChatYar/static/css/main.a58bd79e.css.map",
+    "main.823d17bd.js.map": "/ChatYar/static/js/main.823d17bd.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.a58bd79e.css",
+    "static/js/main.823d17bd.js"
+  ]
+}
