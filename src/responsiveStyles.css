@@ -1,0 +1,22 @@
+@media only screen and (max-width: 1000px) {
+  .contactSide {
+    width: 40%;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .contactSide {
+    width: 100%;
+  }
+  .contactSide-close {
+    width: 0%;
+  }
+  .phone-chat-side {
+    width: 100%;
+  }
+  .chat-arrow-back {
+    display: block;
+  }
+  .mess-box {
+    max-width: 90%;
+  }
+}

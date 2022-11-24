@@ -1,0 +1,43 @@
+.peaple-profile {
+  background-color: var(--bg-color);
+  width: 100%;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+}
+.peaple-profile-body {
+  max-width: 500px;
+  display: flex;
+  background-color: var(--lighter-bg);
+  border-radius: 5px;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+  padding: 40px 0px;
+  flex: 1;
+}
+.peaple-profile-pic {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background-position: center !important;
+  background-size: cover !important;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+}
+.peaple-profile-username {
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  margin-top: 20px;
+}
+.peaple-profile-bio {
+  font-size: 14px;
+  margin-top: 25px;
+  color: var(--white-text);
+}
+.peaple-profile-bio span {
+  font-weight: bold;
+}

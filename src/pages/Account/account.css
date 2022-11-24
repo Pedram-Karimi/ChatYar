@@ -1,0 +1,174 @@
+.account {
+  background-color: var(--bg-color);
+  width: 100%;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+}
+.account-go-back {
+  color: white;
+  background-color: var(--lighter-bg);
+  width: fit-content;
+  padding: 8px 15px;
+  border-radius: 5px;
+  padding-top: 8.5px;
+  border: 1px solid var(--dark-color);
+  top: 10px;
+  left: 10px;
+  transition: 0.2s;
+  cursor: pointer;
+  position: absolute;
+}
+.account-go-back:hover {
+  background-color: var(--layer2-bg);
+}
+.account-body {
+  max-width: 500px;
+  display: flex;
+  background-color: var(--lighter-bg);
+  position: relative;
+  border-radius: 5px;
+  align-items: center;
+  flex-direction: column;
+  padding: 40px 0px;
+  flex: 1;
+}
+.account-username {
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  margin-top: 20px;
+}
+.change-profile-pic-div {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background-position: center !important;
+  background-size: cover !important;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+}
+.change-profile-pic-div div {
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.change-profile-pic-div img {
+  width: 40px;
+}
+.inputTag-avatar {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.1);
+  position: absolute;
+  transition: 0.2s;
+}
+.inputTag-avatar:hover {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+.inputTag-avatar input {
+  display: none;
+}
+.account-bio {
+  color: white;
+  margin-top: 10px;
+}
+.account-header-info-container {
+  padding: 15px 40px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-bottom: 1px solid var(--layer2-bg);
+}
+.account-header-name {
+  color: var(--white-text);
+  font-size: 16px;
+  font-weight: bold;
+}
+.account-header-last-seen {
+  color: var(--dark-color);
+  font-size: 13px;
+}
+.account-header-info-container div {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+.account-header-info-container div span {
+  color: var(--dark-color);
+  font-size: 14px;
+  margin-top: 15px;
+  pointer-events: none;
+}
+.account-header-info-container button {
+  margin-top: 20px;
+  background-color: var(--main-color);
+  color: var(--white-text);
+  border: none;
+  outline: none;
+  border-radius: 3px;
+  padding: 6px 10px;
+  transition: 0.2s;
+  width: 100%;
+  cursor: pointer;
+}
+.account-header-info-container button:hover {
+  background-color: var(--main-color-hover);
+}
+.bio-input {
+  width: 100%;
+  background-color: transparent;
+  margin-top: 15px;
+  border: none;
+  font-size: 14px;
+  outline: none;
+  color: var(--white-text);
+}
+.bio-input::placeholder {
+  color: var(--dark-color);
+}
+/*account data item*/
+.account-data-wraper {
+  width: 100%;
+  margin-top: 10px;
+}
+.account-data-item {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+  padding: 10px;
+  cursor: pointer;
+  transition: 0.2s;
+  justify-content: space-between;
+}
+.account-data-item:hover {
+  background-color: var(--layer2-bg);
+}
+.account-data-item div {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.account-data-item div p {
+  font-size: 14px;
+  color: var(--dark-color);
+}
+.account-data-icon {
+  font-size: 40px;
+  color: var(--dark-color);
+}
+.account-name {
+  font-size: 16px;
+  color: var(--main-color);
+}
+.account-data-icon {
+  width: 40px;
+}

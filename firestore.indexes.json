@@ -1,0 +1,33 @@
+{
+  "indexes": [
+    {
+      "collectionGroup": "userChats",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "messInfo",
+          "arrayConfig": "CONTAINS"
+        },
+        {
+          "fieldPath": "createdAt",
+          "order": "ASCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "userChats",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "messInfo",
+          "arrayConfig": "CONTAINS"
+        },
+        {
+          "fieldPath": "createdAt",
+          "order": "DESCENDING"
+        }
+      ]
+    }
+  ],
+  "fieldOverrides": []
+}
