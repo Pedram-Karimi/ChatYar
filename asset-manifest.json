@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/ChatYar/static/css/main.be68c14d.css",
-    "main.js": "/ChatYar/static/js/main.dea72574.js",
-    "index.html": "/ChatYar/index.html",
-    "main.be68c14d.css.map": "/ChatYar/static/css/main.be68c14d.css.map",
-    "main.dea72574.js.map": "/ChatYar/static/js/main.dea72574.js.map"
+    "main.css": "/chatyar/static/css/main.be68c14d.css",
+    "main.js": "/chatyar/static/js/main.54b2d83d.js",
+    "index.html": "/chatyar/index.html",
+    "main.be68c14d.css.map": "/chatyar/static/css/main.be68c14d.css.map",
+    "main.54b2d83d.js.map": "/chatyar/static/js/main.54b2d83d.js.map"
   },
   "entrypoints": [
     "static/css/main.be68c14d.css",
-    "static/js/main.dea72574.js"
+    "static/js/main.54b2d83d.js"
   ]
 }
