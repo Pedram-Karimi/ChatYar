@@ -81,7 +81,7 @@ function SignUp() {
 
       // going to the home page ---
 
-      navigate("/");
+      navigate("/chatyar/");
 
       // submiting user to the search service srevers ---
 
@@ -127,7 +127,7 @@ function SignUp() {
         </div>
         <div className="signUp-box">
           do you have account?
-          <Link to="/login" className="signup-link">
+          <Link to="/chatyar/login" className="signup-link">
             Log in
           </Link>
         </div>

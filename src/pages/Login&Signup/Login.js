@@ -16,14 +16,14 @@ function Login() {
 
   const { signIn, userDataState } = useUserAuth();
   if (userDataState !== null) {
-    navigate("/");
+    navigate("/chatyar/");
   }
   // signing in the user ---
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
       await signIn(LoginEmail, LoginPassword);
-      return navigate("/");
+      return navigate("/chatyar/");
     } catch (err) {
       console.log(err.message);
     }
@@ -56,7 +56,7 @@ function Login() {
         </div>
         <div className="signUp-box">
           do not have account?
-          <Link to="/sign-up" className="signup-link">
+          <Link to="/chatyar/sign-up" className="signup-link">
             sign up
           </Link>
         </div>

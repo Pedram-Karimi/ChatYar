@@ -114,7 +114,10 @@ function ContactItem(props) {
       >
         <div className="user-avatar">
           <img
-            src={currUser?.userProfile || "../images/avatar.jpg"}
+            src={
+              currUser?.userProfile ||
+              "https://www.gravatar.com/avatar/b3568450826559f6ce26b424b8283279.jpg?size=240&d=https%3A%2F%2Fwww.artstation.com%2Fassets%2Fdefault_avatar.jpg"
+            }
             alt="avatar"
           />
         </div>
