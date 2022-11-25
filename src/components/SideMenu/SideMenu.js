@@ -47,7 +47,12 @@ function SideMenu() {
       ></div>
       <div className={sideMenuStatus ? "sideMenu" : "sideMenu sideMenu-leave"}>
         <div className="sideMenu-header">
-          <img src={userDataState?.userProfile || "../images/avatar.jpg"} />
+          <img
+            src={
+              userDataState?.userProfile ||
+              "https://www.gravatar.com/avatar/b3568450826559f6ce26b424b8283279.jpg?size=240&d=https%3A%2F%2Fwww.artstation.com%2Fassets%2Fdefault_avatar.jpg"
+            }
+          />
           <div>
             <p>{userDataState?.userName}</p>
             <button onClick={logOutAccount}>log out</button>
