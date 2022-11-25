@@ -61,6 +61,22 @@
   flex-direction: column;
   justify-content: space-between;
 }
+.message-disk::-webkit-scrollbar {
+  width: 8px;
+}
+
+.message-disk::-webkit-scrollbar-track {
+  background-color: transparent;
+  margin: 5px 0px;
+}
+
+.message-disk::-webkit-scrollbar-thumb {
+  background-color: var(--light-border);
+  border-radius: 50px;
+}
+.message-disk::-webkit-scrollbar-thumb:hover {
+  background-color: #32384d;
+}
 .mess-box-container {
   width: 100%;
 }

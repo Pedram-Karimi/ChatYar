@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react"; // react
+import { useState, useEffect, useRef } from "react"; // react
 import "./chatSide.css"; // styles
 
 // components
@@ -33,6 +33,7 @@ function ChatSide() {
 
   const [userChats, setUserChats] = useState([]);
   const [currChatRoomId, setCurrChatRoomId] = useState();
+  const messageBody = useRef();
 
   // contexts ---
 
@@ -96,7 +97,7 @@ function ChatSide() {
           const orderedQ = query(
             collection(db, "rooms", coll.docs[0].id, "chats"),
             orderBy("createdAt"),
-            limit(10)
+            limit(100)
           );
           setCurrChatRoomId(coll.docs[0].id);
           const messDoc = await onSnapshot(orderedQ, (messages) => {
@@ -121,13 +122,16 @@ function ChatSide() {
       getChats();
     }
   }, [selected, message]);
-
+  useEffect(() => {
+    messageBody.current.scrollTop =
+      messageBody.current.scrollHeight - messageBody.current.clientHeight;
+  });
   return (
     <div className={`chatSide  ${selected && "phone-chat-side"}`}>
       <div className="chat-desk">
         {selected && <ChatHeader {...selected} chatRoomId={currChatRoomId} />}
         <div className="slectChat-text off">Select a chat</div>
-        <div className="message-disk">
+        <div className="message-disk" ref={messageBody}>
           <span></span>
           <div>
             {userChats.map((mess, index) => {
