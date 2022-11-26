@@ -115,7 +115,7 @@ function SignUp() {
               }}
             />
             <input
-              placeholder="Password"
+              placeholder="Password (contains numbers and letters)"
               value={registerPassword}
               required
               onChange={(e) => {

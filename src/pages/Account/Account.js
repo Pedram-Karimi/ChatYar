@@ -14,6 +14,25 @@ function Account() {
   const { userDataState } = useUserAuth();
   const [bio, setBio] = useState("");
   const [currBio, setCurrBio] = useState(userDataState.bio);
+  const [tempPostImg, setTemPostImage] = useState(
+    "https://www.gravatar.com/avatar/b3568450826559f6ce26b424b8283279.jpg?size=240&d=https%3A%2F%2Fwww.artstation.com%2Fassets%2Fdefault_avatar.jpg"
+  );
+  // makeing temperory profile image ------------------------------
+  useEffect(() => {
+    setTemPostImage(userDataState.userProfile);
+    setCurrBio(userDataState?.bio);
+  }, [userDataState]);
+  useEffect(() => {
+    if (imageUpload) {
+      const reader = new FileReader();
+      reader.onload = () => {
+        if (reader.readyState === 2) {
+          setTemPostImage(reader.result);
+        }
+      };
+      reader.readAsDataURL(imageUpload);
+    }
+  }, [imageUpload]);
 
   // uploading proflie pic -----
 
@@ -83,7 +102,6 @@ function Account() {
     );
     setCurrBio(bio);
   };
-
   //
   return (
     <div className="account">
@@ -93,7 +111,9 @@ function Account() {
         </Link>
         <div
           className="change-profile-pic-div"
-          style={{ background: `url(${userDataState?.userProfile})` }}
+          style={{
+            background: `url(${tempPostImg})`,
+          }}
         >
           <label htmlFor="inputTag-avatar" className="inputTag-avatar">
             <input
@@ -112,6 +132,7 @@ function Account() {
             <input
               className="bio-input"
               placeholder="Bio"
+              value={bio}
               onChange={(e) => {
                 setBio(e.target.value);
               }}

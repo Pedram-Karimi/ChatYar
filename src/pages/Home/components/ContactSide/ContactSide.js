@@ -121,8 +121,12 @@ function ContactSide() {
         <div className="contact-list">
           {searchInput &&
             searchedPeaple.map((person) => {
+              console.log(searchedPeaple);
               return <ContactItem key={person.id} {...person} />;
             })}
+          {searchedPeaple.length === 0 && searchInput && (
+            <p className="no-search-result">No users found</p>
+          )}
           {!searchInput &&
             contacts.map((person) => {
               return <ContactItem key={person} id={person} />;

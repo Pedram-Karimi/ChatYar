@@ -58,6 +58,11 @@
   color: var(--dark-color-hover);
 }
 /*contact side body*/
+.no-search-result {
+  text-align: center;
+  color: var(--dark-color);
+  padding: 10px;
+}
 .contact-list {
   width: 100%;
   padding-top: 5px;

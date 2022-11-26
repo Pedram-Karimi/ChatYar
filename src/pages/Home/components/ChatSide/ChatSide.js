@@ -159,9 +159,8 @@ function ChatSide() {
         </div>
       </div>
       {selected && <WriteText />}
-      {/* {blockedUser.includes(selected?.id) && <UnBlockNav />} */}
       <img
-        src="https://images.unsplash.com/photo-1484589065579-248aad0d8b13?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=459&q=80"
+        src="https://images.wallpaperscraft.com/image/single/cosmonaut_astronaut_art_134410_1280x720.jpg"
         className="bg-image"
       />
     </div>
