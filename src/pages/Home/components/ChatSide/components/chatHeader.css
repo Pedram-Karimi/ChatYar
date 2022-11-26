@@ -12,7 +12,7 @@
   padding: 5px 10px;
 }
 .chat-header-username {
-  font-size: 14px;
+  font-size: 17px;
   margin-top: 3px;
 }
 .header-menu-icon {
@@ -25,7 +25,11 @@
   color: rgb(180, 186, 214);
 }
 .chat-arrow-back {
+  border: none;
   display: none;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
 }
 .chat-header-menu {
   max-width: 120px;

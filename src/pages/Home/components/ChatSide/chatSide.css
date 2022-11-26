@@ -3,6 +3,7 @@
   height: 100vh;
   overflow: hidden;
   position: relative;
+  transition: 0.2s;
 }
 .bg-image {
   width: 100%;
