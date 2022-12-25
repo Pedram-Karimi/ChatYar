@@ -72,19 +72,18 @@ function SignUp() {
         id: user.user.uid,
         userName: registerFirstName,
       };
-
       // clearing inputs ---
 
-      setRegisterEmail("");
-      setRegisterPassword("");
-      setRegisterFirstName("");
+      // setRegisterEmail("");
+      // setRegisterPassword("");
+      // setRegisterFirstName("");
 
       // going to the home page ---
 
       navigate("/chatyar/");
 
       // submiting user to the search service srevers ---
-
+      console.log(document);
       return client.collections("users").documents().create(document);
       //
     } catch (err) {
