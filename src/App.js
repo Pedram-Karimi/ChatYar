@@ -2,7 +2,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 // contexts ---
 
-import { UserAuthProvider } from "./contexts/UserAuthCtx";
+import { UserAuthProvider, useUserAuth } from "./contexts/UserAuthCtx";
 
 // components
 import Home from "./pages/Home/Home";

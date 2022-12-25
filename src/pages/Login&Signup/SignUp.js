@@ -80,11 +80,9 @@ function SignUp() {
 
       // going to the home page ---
 
-      navigate("/chatyar/");
-
       // submiting user to the search service srevers ---
-      console.log(document);
-      return client.collections("users").documents().create(document);
+      client.collections("users").documents().create(document);
+      navigate("/chatyar/");
       //
     } catch (err) {
       console.log(err.message);
