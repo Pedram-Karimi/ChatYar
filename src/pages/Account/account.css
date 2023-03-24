@@ -12,7 +12,8 @@
   width: fit-content;
   padding: 8px 15px;
   border-radius: 5px;
-  padding-top: 8.5px;
+  padding-top: 9px;
+  line-height: 20px;
   border: 1px solid var(--dark-color);
   top: 10px;
   left: 10px;
@@ -21,7 +22,7 @@
   position: absolute;
 }
 .account-go-back:hover {
-  background-color: var(--layer2-bg);
+  background-color: var(--dark-color-hover);
 }
 .account-body {
   max-width: 500px;
@@ -67,12 +68,11 @@
   height: 200px;
   border-radius: 50%;
   cursor: pointer;
-  background-color: rgba(0, 0, 0, 0.1);
   position: absolute;
   transition: 0.2s;
 }
 .inputTag-avatar:hover {
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: rgba(0, 0, 0, 0.1);
 }
 .inputTag-avatar input {
   display: none;
@@ -151,7 +151,7 @@
   justify-content: space-between;
 }
 .account-data-item:hover {
-  background-color: var(--layer2-bg);
+  background-color: var(--dark-color-hover);
 }
 .account-data-item div {
   display: flex;

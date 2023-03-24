@@ -43,12 +43,12 @@ function ContactSide() {
     let client = new Typesense.Client({
       nodes: [
         {
-          host: "ojn84fea210mrhdvp-1.a1.typesense.net",
+          host: "q24cgam89n7jpsfyp-1.a1.typesense.net",
           port: "443",
           protocol: "https",
         },
       ],
-      apiKey: "YT6m6EQvAINv0EfHt75qymW2xtkAMdBg",
+      apiKey: "DHPCqFO6CUDsSoUthnZdzC1TCYvo1bF3",
       connectionTimeoutSeconds: 2,
     });
     let search = {
@@ -122,7 +122,6 @@ function ContactSide() {
         <div className="contact-list">
           {searchInput &&
             searchedPeaple.map((person) => {
-              console.log(searchedPeaple);
               return <ContactItem key={person.id} {...person} />;
             })}
           {searchedPeaple.length === 0 && searchInput && (

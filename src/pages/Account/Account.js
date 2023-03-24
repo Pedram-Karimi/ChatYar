@@ -18,10 +18,48 @@ function Account() {
     "https://www.gravatar.com/avatar/b3568450826559f6ce26b424b8283279.jpg?size=240&d=https%3A%2F%2Fwww.artstation.com%2Fassets%2Fdefault_avatar.jpg"
   );
   // makeing temperory profile image ------------------------------
+
   useEffect(() => {
-    setTemPostImage(userDataState.userProfile);
+    setTemPostImage(
+      userDataState.userProfile ||
+        "https://www.gravatar.com/avatar/b3568450826559f6ce26b424b8283279.jpg?size=240&d=https%3A%2F%2Fwww.artstation.com%2Fassets%2Fdefault_avatar.jpg"
+    );
     setCurrBio(userDataState?.bio);
   }, [userDataState]);
+
+  //  decrease image resolution -----
+  async function decreaseImageResolution(blob, width, height) {
+    const img = new Image();
+    img.src = URL.createObjectURL(blob);
+    await new Promise((resolve) => {
+      img.onload = resolve;
+    });
+
+    const canvas = document.createElement("canvas");
+    const aspectRatio = img.width / img.height;
+
+    if (aspectRatio > 1) {
+      canvas.width = width;
+      canvas.height = Math.round(width / aspectRatio);
+    } else {
+      canvas.width = Math.round(height * aspectRatio);
+      canvas.height = height;
+    }
+
+    const ctx = canvas.getContext("2d");
+    ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+
+    return new Promise((resolve) => {
+      canvas.toBlob((blob) => resolve(blob), "image/jpeg", 0.8);
+    });
+  }
+  const handleImageChange = async (event) => {
+    const file = event.target.files[0];
+    const reducedBlob = await decreaseImageResolution(file, 640, 480);
+    setImageUpload(reducedBlob);
+    // Do something with the reducedBlob, such as uploading it to a server
+  };
+  // console.log(imageUpload);
   useEffect(() => {
     if (imageUpload) {
       const reader = new FileReader();
@@ -102,6 +140,7 @@ function Account() {
     );
     setCurrBio(bio);
   };
+
   //
   return (
     <div className="account">
@@ -121,7 +160,7 @@ function Account() {
               id="inputTag-avatar"
               className="choose-file"
               onChange={(e) => {
-                setImageUpload(e.target.files[0]);
+                handleImageChange(e);
               }}
             />
           </label>
@@ -132,7 +171,7 @@ function Account() {
             <input
               className="bio-input"
               placeholder="Bio"
-              value={bio}
+              value={bio ?? ""}
               onChange={(e) => {
                 setBio(e.target.value);
               }}

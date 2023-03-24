@@ -1,6 +1,8 @@
 import { useState, useEffect, useRef } from "react"; // react
 import "./chatSide.css"; // styles
 
+import { FaClock } from "react-icons/fa";
+
 // components
 
 import WriteText from "./components/WriteText";
@@ -95,11 +97,11 @@ function ChatSide() {
             return;
           }
           const orderedQ = query(
-            collection(db, "rooms", coll.docs[0].id, "chats"),
+            collection(db, "rooms", coll.docs[0]?.id, "chats"),
             orderBy("createdAt"),
             limit(100)
           );
-          setCurrChatRoomId(coll.docs[0].id);
+
           const messDoc = await onSnapshot(orderedQ, (messages) => {
             setUserChats([]);
             messages.docs.forEach((message) => {
@@ -116,6 +118,7 @@ function ChatSide() {
                 { ...message.data(), createdAt: createdTime },
               ]);
             });
+            setCurrChatRoomId(coll.docs[0]?.id);
           });
         });
       };
@@ -126,6 +129,7 @@ function ChatSide() {
     messageBody.current.scrollTop =
       messageBody.current.scrollHeight - messageBody.current.clientHeight;
   });
+
   return (
     <div className={`chatSide  ${selected && "phone-chat-side"}`}>
       <div className="chat-desk">
@@ -150,7 +154,15 @@ function ChatSide() {
                     }`}
                   >
                     {mess.mess}
-                    <span className="write-time">{mess.createdAt}</span>
+                    <span className="write-time">
+                      <span>
+                        {mess.createdAt == " undefined" ? (
+                          <FaClock />
+                        ) : (
+                          mess.createdAt
+                        )}
+                      </span>
+                    </span>
                   </p>
                 </div>
               );
@@ -160,7 +172,7 @@ function ChatSide() {
       </div>
       {selected && <WriteText />}
       <img
-        src="https://images.wallpaperscraft.com/image/single/cosmonaut_astronaut_art_134410_1280x720.jpg"
+        src="https://firebasestorage.googleapis.com/v0/b/chating-app-2db46.appspot.com/o/joshua-woroniecki-TspYRqQrErc-unsplash.jpg?alt=media&token=4929ec6a-1300-49e9-8fad-aeb54d2cbfea"
         className="bg-image"
       />
     </div>

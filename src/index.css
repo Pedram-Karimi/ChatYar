@@ -20,16 +20,20 @@ img {
   color: #e2e2e2;
 }
 :root {
-  --bg-color: #17181e;
+  --bg-color: #0d1520;
   --strong-border: #1f212c;
-  --light-border: #292e41;
+  --light-border: #1f2430;
+  --lighter-border: #292e41;
   --light-color: #696f85;
   --white-text: #e2e2e2;
   --dark-color: #3e4561;
-  --dark-color-hover: #646b87;
+  --dark-color-hover: #131e2c;
   --light-color-hover: #707997;
-  --lighter-bg: #1d202d;
-  --layer2-bg: #292e41;
-  --main-color: #2294a0;
-  --main-color-hover: #20b2c2;
+  --lighter-bg: #101925;
+  --layer2-bg: #192332;
+  --main-color: #226ba0;
+  --main-color-dark: #1a3e5b;
+  --main-color-light: #83a0ca;
+  --main-color-border: #204768;
+  --main-color-hover: #257ebe;
 }

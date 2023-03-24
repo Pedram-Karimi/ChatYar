@@ -5,9 +5,10 @@
   z-index: 20;
   left: 0px;
   color: var(--white-text);
-  background-color: #1f212c;
+  background-color: var(--bg-color);
   height: 100vh;
   transition: 0.2s;
+  border-right: 1px solid var(--strong-border);
 }
 .sideMenu-leave {
   left: -260px;
@@ -33,14 +34,16 @@
 }
 .sideMenu-header div button {
   cursor: pointer;
-  padding: 0px 5px;
-  color: #2294a0;
+  padding: 2px 9px;
+  color: var(--main-color);
+  border-radius: 10px;
   font-size: medium;
-  border: none;
+  border: 1px solid var(--main-color-border);
   background-color: transparent;
+  transition: 0.1s;
 }
 .sideMenu-header div button:hover {
-  text-decoration: underline;
+  background-color: var(--dark-color-hover);
 }
 .sideMenu-header div p {
   margin-left: 3px;
@@ -80,6 +83,6 @@
   margin-top: 5px;
 }
 .side-menu-item:hover {
-  background-color: #2a2e3d;
+  background-color: var(--dark-color-hover);
   color: var(--main-color);
 }

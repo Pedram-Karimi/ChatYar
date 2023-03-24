@@ -4,8 +4,8 @@
   height: 100vh;
   overflow: hidden;
   transition: 0.2s;
-  border-right: 1px solid #1f212c;
-  background-color: #17181e;
+  border-right: 1px solid var(--strong-border);
+  background-color: var(--bg-color);
 }
 .contactSide header {
   width: 100%;
@@ -17,7 +17,7 @@
 .bars-icon {
   margin-right: 10px;
   font-size: 20px;
-  color: #292e41;
+  color: var(--lighter-border);
   cursor: pointer;
   transition: 0.1s;
 }
@@ -27,14 +27,11 @@
 .contactSide header input {
   flex: 1;
   border-radius: 4px;
-  border: 1px solid #292e41;
+  border: 1px solid var(--lighter-border);
   outline: none;
   color: white;
   padding: 5px;
-  background-color: #1d202d;
-}
-.contactSide header input:focus {
-  box-shadow: 1px 1px 7px -1px #292e41;
+  background-color: var(--layer2-bg);
 }
 .contact-side-menu {
   width: 100%;
@@ -68,78 +65,4 @@
   width: 100%;
   padding-top: 5px;
 }
-.signInBtn {
-  width: 100%;
-  height: 50px;
-  background-color: #2294a0;
-  position: absolute;
-  bottom: 0px;
-  color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: 0.2s;
-  cursor: pointer;
-}
-.signInBtn:hover {
-  background-color: #20b2c2;
-}
 /*contact menu item*/
-.contactItem {
-  width: 100%;
-  height: 60px;
-  padding: 5px;
-  display: flex;
-  align-items: center;
-  cursor: pointer;
-}
-.selectedLable {
-  width: 100%;
-  height: 60px;
-  background-color: #1f222f;
-  padding: 5px;
-  display: flex;
-  align-items: center;
-}
-.contactRadio {
-  display: none;
-}
-.contactItem:hover {
-  background-color: rgb(25, 26, 34);
-}
-.user-avatar {
-  width: 45px;
-  height: 45px;
-  overflow: hidden;
-  border-radius: 50%;
-}
-.user-avatar img {
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-}
-.user-small-info {
-  flex: 1;
-  color: white;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  height: 100%;
-  padding-left: 10px;
-}
-.user-userName {
-  font-size: 13px;
-}
-.user-lastMess {
-  margin-top: 5px;
-  font-size: 12px;
-  color: #535a73;
-}
-.last-mess-time {
-  position: absolute;
-  right: 0px;
-  color: #535a73;
-  top: 5px;
-  font-size: 12px;
-}

@@ -8,13 +8,11 @@ import {
   addDoc,
   query,
   where,
-  onSnapshot,
   doc,
   serverTimestamp,
-  getDoc,
   arrayUnion,
-  setDoc,
   getDocs,
+  updateDoc,
 } from "firebase/firestore";
 
 // contexts
@@ -57,10 +55,22 @@ export const AddTextProvider = ({ children }) => {
                 createdAt: serverTimestamp(),
               }
             );
+            const messRoom = doc(db, "rooms", coll.docs[0].id);
+
+            await updateDoc(messRoom, {
+              latestMess: {
+                mess: message,
+                createdAt: serverTimestamp(),
+              },
+            });
           } else {
             const messColl = await addDoc(collection(db, "rooms"), {
               messengers: `${userDataState.user.uid}%${selected?.id}`,
               messengersArr: arrayUnion(userDataState.user.uid, selected.id),
+              latestMess: {
+                mess: message,
+                createdAt: serverTimestamp(),
+              },
             }).then(async (doc) => {
               const messDoc = await addDoc(
                 collection(db, "rooms", doc.id, "chats"),

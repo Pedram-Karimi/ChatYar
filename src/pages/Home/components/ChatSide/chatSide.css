@@ -8,7 +8,6 @@
 .bg-image {
   width: 100%;
   height: 100%;
-  object-fit: cover;
   z-index: 1;
 }
 .chat-desk {
@@ -16,7 +15,6 @@
   height: 100%;
   z-index: 2;
   position: absolute;
-  background-color: #17181e95;
 }
 /*select a chat div*/
 .off {
@@ -63,12 +61,12 @@
   justify-content: space-between;
 }
 .message-disk::-webkit-scrollbar {
-  width: 8px;
+  width: 5px;
 }
 
 .message-disk::-webkit-scrollbar-track {
   background-color: transparent;
-  margin: 5px 0px;
+  margin: 5px;
 }
 
 .message-disk::-webkit-scrollbar-thumb {
@@ -86,33 +84,40 @@
 }
 .mess-box {
   padding: 7px;
-  border-radius: 4px;
+  border-radius: 10px;
   color: white;
   width: fit-content;
+  justify-content: space-between;
   max-width: 70%;
   flex-wrap: wrap;
   font-size: 15px;
-  min-width: 100px;
   word-break: break-all;
   margin: 5px 0px;
   display: flex;
-  background-color: var(--lighter-bg);
+  border: 1px solid var(--light-border);
+  background-color: var(--bg-color);
 }
 .curr-user-mess {
-  background-color: var(--layer2-bg);
+  background-color: var(--main-color-dark);
   direction: ltr;
-  padding-bottom: 20px;
   position: relative;
+  border: 1px solid var(--main-color-border);
 }
-.curr-user-mess span {
-  color: #727996 !important;
-  position: absolute;
-  right: 10px;
-  bottom: 5px;
+.curr-user-mess span > span {
+  color: var(--main-color-light) !important;
 }
 .write-time {
-  font-size: 11px;
-  color: var(--light-color);
-  margin-top: auto;
-  margin-left: 10px;
+  width: 60px;
+  flex: 1;
+  position: relative;
+}
+.write-time span {
+  font-size: 12px;
+  color: var(--dark-color) !important;
+  position: absolute;
+  line-height: 5px;
+  right: -1px;
+  bottom: -1px;
+  /* margin-top: auto; */
+  /* margin-left: 10px; */
 }

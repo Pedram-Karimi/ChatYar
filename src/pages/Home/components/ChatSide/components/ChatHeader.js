@@ -10,7 +10,7 @@ import "./chatHeader.css"; // styles
 
 // firebase
 
-import { writeBatch, collection, getDocs } from "firebase/firestore";
+import { writeBatch, collection, getDocs, doc } from "firebase/firestore";
 import { db } from "../../../../../FirebaseConfig";
 import { useSelectedUser } from "../../../../../contexts/SelectedUserCtx";
 
@@ -28,15 +28,23 @@ function ChatHeader(props) {
       setHeaderMenuStatus(false);
     }
   });
+
   const deleteChat = async () => {
-    const chatRoomRef = collection(db, "rooms", props.chatRoomId, "chats");
+    const chatsRef = collection(db, "rooms", props.chatRoomId, "chats");
     const batch = writeBatch(db);
-    const chatDocs = await getDocs(chatRoomRef);
+    const chatDocs = await getDocs(chatsRef);
     chatDocs.forEach((doc) => {
       batch.delete(doc.ref);
     });
     await batch.commit();
   };
+  const deleteRoom = async () => {
+    const chatRoomRef = doc(db, "rooms", props.chatRoomId);
+    const batch = writeBatch(db);
+    batch.delete(chatRoomRef);
+    await batch.commit();
+  };
+  // console.log(props.chatRoomId);
   //
   return (
     <div className="chatHeader">
@@ -51,7 +59,14 @@ function ChatHeader(props) {
       </Link>
       <MdMoreVert className="header-menu-icon" onClick={toggleHeaderMenu} />
       <div className={`chat-header-menu ${headerMenuStatus && "show"}`}>
-        <p onClick={deleteChat}>Delete chat</p>
+        <p
+          onClick={() => {
+            deleteChat();
+            deleteRoom();
+          }}
+        >
+          Delete chat
+        </p>
       </div>
     </div>
   );

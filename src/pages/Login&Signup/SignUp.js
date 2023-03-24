@@ -52,12 +52,12 @@ function SignUp() {
       let client = new Typesense.Client({
         nodes: [
           {
-            host: "ojn84fea210mrhdvp-1.a1.typesense.net", // where xxx is the ClusterID of your Typesense Cloud cluster
+            host: "q24cgam89n7jpsfyp-1.a1.typesense.net",
             port: "443",
             protocol: "https",
           },
         ],
-        apiKey: "YT6m6EQvAINv0EfHt75qymW2xtkAMdBg",
+        apiKey: "Z1b15cftabP57Dm0YVZdaofgTt2CQ7bK",
         connectionTimeoutSeconds: 2,
       });
       const myCollection = {
