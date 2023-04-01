@@ -124,7 +124,7 @@ function SignUp() {
         </div>
         <div className="signUp-box">
           do you have account?
-          <Link to="/chatyar/login" className="signup-link">
+          <Link to="/login" className="signup-link">
             Log in
           </Link>
         </div>

@@ -56,7 +56,7 @@ function Login() {
         </div>
         <div className="signUp-box">
           do not have account?
-          <Link to="/chatyar/sign-up" className="signup-link">
+          <Link to="/sign-up" className="signup-link">
             sign up
           </Link>
         </div>

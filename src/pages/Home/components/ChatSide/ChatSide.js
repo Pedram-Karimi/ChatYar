@@ -172,7 +172,7 @@ function ChatSide() {
       </div>
       {selected && <WriteText />}
       <img
-        src="https://firebasestorage.googleapis.com/v0/b/chating-app-2db46.appspot.com/o/joshua-woroniecki-TspYRqQrErc-unsplash.jpg?alt=media&token=4929ec6a-1300-49e9-8fad-aeb54d2cbfea"
+        src="https://firebasestorage.googleapis.com/v0/b/chating-app-2db46.appspot.com/o/413834.jpg?alt=media&token=5479aac1-c74a-4504-97c9-b50894c6f5a4"
         className="bg-image"
       />
     </div>

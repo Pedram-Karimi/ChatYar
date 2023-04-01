@@ -15,10 +15,10 @@ function App() {
   return (
     <div className="App">
       <UserAuthProvider>
-        <BrowserRouter>
+        <BrowserRouter basename={"/chatyar"}>
           <Routes>
             <Route
-              path="/chatyar/"
+              path="/"
               element={
                 <ProtectedRouts>
                   <Home />
@@ -26,16 +26,16 @@ function App() {
               }
             />
             <Route
-              path="/chatyar/profile"
+              path="/profile"
               element={
                 <ProtectedRouts>
                   <Account />
                 </ProtectedRouts>
               }
             />
-            <Route path="/chatyar/profile/:id" element={<PeopleProfile />} />
-            <Route path="/chatyar/login" element={<Login />} />
-            <Route path="/chatyar/sign-up" element={<SignUp />} />
+            <Route path="/profile/:id" element={<PeopleProfile />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/sign-up" element={<SignUp />} />
           </Routes>
         </BrowserRouter>
       </UserAuthProvider>
