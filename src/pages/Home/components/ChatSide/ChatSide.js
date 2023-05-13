@@ -35,6 +35,7 @@ function ChatSide() {
 
   const [userChats, setUserChats] = useState([]);
   const [currChatRoomId, setCurrChatRoomId] = useState();
+  const [messDates, setMessDates] = useState([]);
   const messageBody = useRef();
 
   // contexts ---
@@ -61,6 +62,7 @@ function ChatSide() {
 
   useEffect(() => {
     setUserChats([]);
+    setMessDates([]);
   }, [selected]);
 
   // get all messages ----
@@ -105,11 +107,24 @@ function ChatSide() {
           const messDoc = await onSnapshot(orderedQ, (messages) => {
             setUserChats([]);
             messages.docs.forEach((message) => {
+              //getting full month and year ---
+
+              const date = new Date(message.data().createdAt.seconds * 1000);
+              const month = date.getMonth() + 1;
+              const day = date.getDate();
+              const year = date.getFullYear();
+
+              const formattedDate = `${month}/${day}/${year}`;
+              setMessDates((pervDates) => [...pervDates, formattedDate]);
+
+              // getting hour and minute ---
+
               const fixedTime = tConvert(
                 new Date(message.data().createdAt?.seconds * 1000)
                   ?.toString()
                   ?.split(" ")[4]
               );
+
               let arr = fixedTime.split(" ")[0].split(":");
               arr.pop();
               const createdTime = arr.join(":") + " " + fixedTime.split(" ")[1];
@@ -139,6 +154,7 @@ function ChatSide() {
           <span></span>
           <div>
             {userChats.map((mess, index) => {
+              console.log(messDates[index]);
               return (
                 <div
                   className={`mess-box-container ${
@@ -147,6 +163,9 @@ function ChatSide() {
                   }`}
                   key={index}
                 >
+                  {messDates[index] != messDates[index - 1] && (
+                    <p className="year-month-date">{messDates[index]}</p>
+                  )}
                   <p
                     className={`mess-box ${
                       mess.messInfo[0] == userDataState.user.uid &&

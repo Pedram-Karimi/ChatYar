@@ -16,14 +16,14 @@ function Login() {
 
   const { signIn, userDataState } = useUserAuth();
   if (userDataState !== null) {
-    navigate("/chatyar/");
+    navigate("/");
   }
   // signing in the user ---
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
       await signIn(LoginEmail, LoginPassword);
-      return navigate("/chatyar/");
+      return navigate("/");
     } catch (err) {
       console.log(err.message);
     }

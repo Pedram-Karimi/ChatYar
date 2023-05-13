@@ -21,6 +21,7 @@ img {
 }
 :root {
   --bg-color: #0d1520;
+  --low-opacity-bg: #151515d2;
   --strong-border: #1f212c;
   --light-border: #1f2430;
   --lighter-border: #292e41;

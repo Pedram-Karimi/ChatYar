@@ -43,12 +43,12 @@ function ContactSide() {
     let client = new Typesense.Client({
       nodes: [
         {
-          host: "q24cgam89n7jpsfyp-1.a1.typesense.net",
+          host: "j5i61nycs892ab3vp-1.a1.typesense.net",
           port: "443",
           protocol: "https",
         },
       ],
-      apiKey: "DHPCqFO6CUDsSoUthnZdzC1TCYvo1bF3",
+      apiKey: "jyL4hHp2GnYdY2JcPZPOtuEBrCGQwCEe",
       connectionTimeoutSeconds: 2,
     });
     let search = {
