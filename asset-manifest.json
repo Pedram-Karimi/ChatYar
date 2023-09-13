@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/chatyar/static/css/main.001adc60.css",
-    "main.js": "/chatyar/static/js/main.89d2c193.js",
+    "main.css": "/chatyar/static/css/main.acdaf2d2.css",
+    "main.js": "/chatyar/static/js/main.68453ad3.js",
     "index.html": "/chatyar/index.html",
-    "main.001adc60.css.map": "/chatyar/static/css/main.001adc60.css.map",
-    "main.89d2c193.js.map": "/chatyar/static/js/main.89d2c193.js.map"
+    "main.acdaf2d2.css.map": "/chatyar/static/css/main.acdaf2d2.css.map",
+    "main.68453ad3.js.map": "/chatyar/static/js/main.68453ad3.js.map"
   },
   "entrypoints": [
-    "static/css/main.001adc60.css",
-    "static/js/main.89d2c193.js"
+    "static/css/main.acdaf2d2.css",
+    "static/js/main.68453ad3.js"
   ]
 }
