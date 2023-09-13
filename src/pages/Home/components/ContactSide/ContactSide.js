@@ -8,7 +8,7 @@ import SMToggleBtn from "./components/SMToggleBtn";
 import SideMenu from "../../../../components/SideMenu/SideMenu";
 import ContactItem from "./components/ContactItem/ContactItem";
 
-import Typesense from "typesense"; // search service
+import algoliasearch from "algoliasearch";
 
 // firebase
 
@@ -32,47 +32,40 @@ function ContactSide() {
   const { selected } = useSelectedUser();
   const { userDataState } = useUserAuth();
 
-  //typesense search ----
+  //algolia search ----
 
   useEffect(() => {
     //checks
-    if (searchInput == "" && searchedPeaple.length > 0) {
+    if (searchInput === "") {
       setSearchedPeaple([]);
     }
-    // changeSelected(null);
-    let client = new Typesense.Client({
-      nodes: [
-        {
-          host: "j5i61nycs892ab3vp-1.a1.typesense.net",
-          port: "443",
-          protocol: "https",
-        },
-      ],
-      apiKey: "jyL4hHp2GnYdY2JcPZPOtuEBrCGQwCEe",
-      connectionTimeoutSeconds: 2,
-    });
-    let search = {
-      q: searchInput,
-      query_by: "userName",
-    };
-    if (searchInput !== "") {
-      client
-        .collections("users")
-        .documents()
-        .search(search)
-        .then(function (searchResults) {
-          searchResults.hits.forEach((userDoc) => {
+
+    const client = algoliasearch(
+      "RPX6XE5QIU",
+      "972f99ffa982ad7c6705de32534d3949"
+    );
+    const index = client.initIndex("users");
+
+    if (searchInput) {
+      index
+        .search(searchInput)
+        .then(({ hits }) => {
+          hits.forEach((userDoc) => {
             if (
               userDataState.user &&
-              userDoc.document.id !== userDataState.user.uid
+              userDoc.objectID !== userDataState.user.uid
             ) {
+              console.log(searchedPeaple);
               setSearchedPeaple([]);
               setSearchedPeaple((pervItems) => [
                 ...pervItems,
-                userDoc.document,
+                userDoc.objectID,
               ]);
             }
           });
+        })
+        .catch((err) => {
+          console.log(err);
         });
     }
   }, [searchInput]);
@@ -122,7 +115,7 @@ function ContactSide() {
         <div className="contact-list">
           {searchInput &&
             searchedPeaple.map((person) => {
-              return <ContactItem key={person.id} {...person} />;
+              return <ContactItem key={person} id={person} />;
             })}
           {searchedPeaple.length === 0 && searchInput && (
             <p className="no-search-result">No users found</p>

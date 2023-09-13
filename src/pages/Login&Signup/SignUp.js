@@ -2,7 +2,7 @@ import { useState } from "react"; // react
 
 import { Link, useNavigate } from "react-router-dom"; // react-router
 
-import Typesense from "typesense"; // search service
+import algoliasearch from "algoliasearch"; // search service
 
 // firebase
 
@@ -49,29 +49,51 @@ function SignUp() {
 
       // saving user id to the search service servers ---
 
-      let client = new Typesense.Client({
-        nodes: [
-          {
-            host: "j5i61nycs892ab3vp-1.a1.typesense.net",
-            port: "443",
-            protocol: "https",
-          },
-        ],
-        apiKey: "w9NW4izFebq67SNnaD9mI1pxjKWVHATA",
-        connectionTimeoutSeconds: 2,
-      });
-      const myCollection = {
-        name: "users",
-        fields: [
-          { name: "id", type: "string" },
-          { name: "userName", type: "string" },
-        ],
-      };
-      client.collections().create(myCollection);
-      const document = {
-        id: user.user.uid,
-        userName: registerFirstName,
-      };
+      const client = algoliasearch(
+        "RPX6XE5QIU",
+        "972f99ffa982ad7c6705de32534d3949"
+      );
+      const index = client.initIndex("users");
+
+      const objects = [
+        {
+          objectID: user.user.uid,
+          userName: registerFirstName,
+        },
+      ];
+
+      index
+        .saveObjects(objects)
+        .then(({ objectIDs }) => {
+          console.log(objectIDs);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+      // let client = new Typesense.Client({
+      //   nodes: [
+      //     {
+      //       host: "j5i61nycs892ab3vp-1.a1.typesense.net",
+      //       port: "443",
+      //       protocol: "https",
+      //     },
+      //   ],
+      //   apiKey: "w9NW4izFebq67SNnaD9mI1pxjKWVHATA",
+      //   connectionTimeoutSeconds: 2,
+      // });
+      // const myCollection = {
+      //   name: "users",
+      //   fields: [
+      //     { name: "id", type: "string" },
+      //     { name: "userName", type: "string" },
+      //   ],
+      // };
+      // client.collections().create(myCollection);
+      // const document = {
+      //   id: user.user.uid,
+      //   userName: registerFirstName,
+      // };
+
       // clearing inputs ---
 
       // setRegisterEmail("");
@@ -81,7 +103,7 @@ function SignUp() {
       // going to the home page ---
 
       // submiting user to the search service srevers ---
-      client.collections("users").documents().create(document);
+      // client.collections("users").documents().create(document);
       navigate("/");
       //
     } catch (err) {

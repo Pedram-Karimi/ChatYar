@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
-import { MdPerson, MdAddCircle } from "react-icons/md";
+import { MdPerson } from "react-icons/md";
 import "./peopleProfile.css";
 import { doc, getDoc } from "firebase/firestore";
 import { db } from "../../FirebaseConfig";
@@ -45,14 +45,12 @@ function PeopleProfile() {
             </div>
             <p className="account-name">{userProfileAccount?.userName}</p>
           </div>
-          <div className="account-data-item">
-            {/* <p className="account-name">{userProfileAccount?.email}</p> */}
-          </div>
+          {/* <div className="account-data-item">
+            <p className="account-name">{userProfileAccount?.email}</p>
+          </div> */}
         </div>
       </div>
     </div>
   );
 }
 export default PeopleProfile;
-{
-}

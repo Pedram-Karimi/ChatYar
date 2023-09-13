@@ -190,13 +190,13 @@ function Account() {
             </div>
             <p className="account-name">{userDataState?.userName}</p>
           </div>
-          <div className="account-data-item">
+          {/* <div className="account-data-item">
             <div>
               <MdAddCircle className="account-data-icon" />
               <p>Email</p>
             </div>
             <p className="account-name">{userDataState?.user?.email}</p>
-          </div>
+          </div> */}
         </div>
       </div>
     </div>

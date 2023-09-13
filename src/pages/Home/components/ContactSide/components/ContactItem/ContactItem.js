@@ -116,6 +116,7 @@ function ContactItem(props) {
     getData();
   }, []);
   //
+  // console.log(props.id);
   return (
     <>
       <div
