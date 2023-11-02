@@ -36,6 +36,7 @@ function ChatSide() {
   const [userChats, setUserChats] = useState([]);
   const [currChatRoomId, setCurrChatRoomId] = useState();
   const [messDates, setMessDates] = useState([]);
+  const [tempVar, setTempVar] = useState([]);
   const messageBody = useRef();
 
   // contexts ---
@@ -88,6 +89,7 @@ function ChatSide() {
             let arr = fixedTime.split(" ")[0].split(":");
             arr.pop();
             const createdTime = arr.join(":") + " " + fixedTime.split(" ")[1];
+
             setUserChats((pervMess) => [
               ...pervMess,
               {
@@ -103,11 +105,12 @@ function ChatSide() {
             orderBy("createdAt"),
             limit(100)
           );
-
+          // console.log("it gets run outside");
           const messDoc = await onSnapshot(orderedQ, (messages) => {
             setUserChats([]);
+            setMessDates([]);
             messages.docs.forEach((message) => {
-              //getting full month and year ---
+              //storing dates of the messages in order to seperate them into catagories ---
 
               const date = new Date(message.data().createdAt.seconds * 1000);
               const month = date.getMonth() + 1;
@@ -132,6 +135,7 @@ function ChatSide() {
                 ...pervMess,
                 { ...message.data(), createdAt: createdTime },
               ]);
+              setTempVar((pervMess) => [...pervMess, { ...message.data() }]);
             });
             setCurrChatRoomId(coll.docs[0]?.id);
           });
@@ -140,6 +144,8 @@ function ChatSide() {
       getChats();
     }
   }, [selected, message]);
+
+  // keeps the scroll at the bottom
   useEffect(() => {
     messageBody.current.scrollTop =
       messageBody.current.scrollHeight - messageBody.current.clientHeight;
@@ -149,12 +155,10 @@ function ChatSide() {
     <div className={`chatSide  ${selected && "phone-chat-side"}`}>
       <div className="chat-desk">
         {selected && <ChatHeader {...selected} chatRoomId={currChatRoomId} />}
-        <div className="slectChat-text off">Select a chat</div>
         <div className="message-disk" ref={messageBody}>
-          <span></span>
+          {/* <span></span> */}
           <div>
             {userChats.map((mess, index) => {
-              console.log(messDates[index]);
               return (
                 <div
                   className={`mess-box-container ${
@@ -163,6 +167,7 @@ function ChatSide() {
                   }`}
                   key={index}
                 >
+                  {/* seperating messages by date */}
                   {messDates[index] != messDates[index - 1] && (
                     <p className="year-month-date">{messDates[index]}</p>
                   )}

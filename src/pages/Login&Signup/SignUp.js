@@ -70,29 +70,6 @@ function SignUp() {
         .catch((err) => {
           console.log(err);
         });
-      // let client = new Typesense.Client({
-      //   nodes: [
-      //     {
-      //       host: "j5i61nycs892ab3vp-1.a1.typesense.net",
-      //       port: "443",
-      //       protocol: "https",
-      //     },
-      //   ],
-      //   apiKey: "w9NW4izFebq67SNnaD9mI1pxjKWVHATA",
-      //   connectionTimeoutSeconds: 2,
-      // });
-      // const myCollection = {
-      //   name: "users",
-      //   fields: [
-      //     { name: "id", type: "string" },
-      //     { name: "userName", type: "string" },
-      //   ],
-      // };
-      // client.collections().create(myCollection);
-      // const document = {
-      //   id: user.user.uid,
-      //   userName: registerFirstName,
-      // };
 
       // clearing inputs ---
 
@@ -102,8 +79,6 @@ function SignUp() {
 
       // going to the home page ---
 
-      // submiting user to the search service srevers ---
-      // client.collections("users").documents().create(document);
       navigate("/");
       //
     } catch (err) {
